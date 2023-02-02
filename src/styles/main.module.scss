@@ -1,0 +1,8 @@
+.main {
+   & > * {
+      @apply px-3 py-5;
+   }
+}
+.title {
+   @apply font-bold text-4xl text-neutral-900;
+}

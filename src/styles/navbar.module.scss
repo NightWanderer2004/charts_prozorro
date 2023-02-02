@@ -1,0 +1,6 @@
+.navbar {
+   @apply fixed z-10 w-full bg-neutral-800 drop-shadow-md flex items-center px-3 py-2;
+   .logo {
+      @apply text-white text-2xl;
+   }
+}

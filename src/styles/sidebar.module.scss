@@ -1,0 +1,9 @@
+.sidebar {
+   @apply bg-neutral-100 fixed top-[51px] w-[230px];
+}
+.links {
+   @apply flex flex-col gap-y-3;
+   .link {
+      @apply text-xl text-neutral-900;
+   }
+}
