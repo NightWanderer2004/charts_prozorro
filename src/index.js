@@ -3,9 +3,11 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import ErrorPage from './components/UI/ErrorPage.jsx'
-import Dashboard from './components/dashboard/Dashboard'
+import Dashboard from './routes/Dashboard'
+import Orders from './routes/Orders'
 import App from './App'
-import Orders from './components/orders/Orders'
+import { Provider } from 'react-redux'
+import { store } from './redux/store'
 
 const router = createBrowserRouter([
    {
@@ -27,7 +29,9 @@ const router = createBrowserRouter([
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
-   <React.StrictMode>
-      <RouterProvider router={router} />
-   </React.StrictMode>
+   <Provider store={store}>
+      <React.StrictMode>
+         <RouterProvider router={router} />
+      </React.StrictMode>
+   </Provider>
 )
