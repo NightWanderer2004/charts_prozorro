@@ -1,6 +1,6 @@
 import React from 'react'
-import Line from '../UI/Line'
-import Title from '../UI/Title'
+import Line from '../components/UI/Line'
+import Title from '../components/UI/Title'
 
 const Orders = () => {
    return (
