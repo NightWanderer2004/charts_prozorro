@@ -1,5 +1,5 @@
 .sidebar {
-   @apply bg-neutral-100 fixed top-[51px] w-[230px];
+   @apply bg-neutral-100 fixed top-[51px] w-[230px] h-screen;
 }
 .links {
    @apply flex flex-col gap-y-3;

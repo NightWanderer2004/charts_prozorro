@@ -1,0 +1,33 @@
+.container {
+   @apply max-h-[565px] overflow-scroll shadow-md;
+}
+table {
+   @apply relative w-full;
+}
+thead {
+   @apply sticky top-0 left-0;
+   th {
+      @apply text-white bg-slate-600 font-bold py-3 text-center;
+      &:first-child {
+         @apply text-left rounded-tl-sm;
+      }
+      &:last-child {
+         @apply rounded-tr-sm;
+      }
+   }
+}
+tbody {
+   td {
+      @apply py-3 truncate max-w-[300px] text-center;
+      &:first-child {
+         @apply text-left;
+      }
+   }
+   tr:nth-child(even) {
+      @apply bg-neutral-100;
+   }
+}
+td,
+th {
+   @apply px-5;
+}
