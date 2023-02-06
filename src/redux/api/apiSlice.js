@@ -4,14 +4,15 @@ export const apiSlice = createApi({
    reducerPath: 'apiSlice',
    baseQuery: fetchBaseQuery({
       baseUrl: 'https://public.api.openprocurement.org/api/2.5/',
-      // baseUrl: 'https://www.boredapi.com/api/',
    }),
    endpoints: builder => ({
-      plans: builder.query({
-         // query: () => '/activity',
+      getPlans: builder.query({
          query: () => '/plans',
+      }),
+      getPlansItem: builder.query({
+         query: id => ({ url: `plans/${id}` }),
       }),
    }),
 })
 
-export const { usePlansQuery } = apiSlice
+export const { useGetPlansQuery, useGetPlansItemQuery } = apiSlice
