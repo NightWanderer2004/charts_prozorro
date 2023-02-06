@@ -1,5 +1,5 @@
-import DataChart from '../components/UI/DataChart'
 import Line from '../components/UI/Line'
+import DataTable from '../components/UI/table/DataTable'
 import Title from '../components/UI/Title'
 
 const Dashboard = () => {
@@ -7,7 +7,7 @@ const Dashboard = () => {
       <div>
          <Title>Dashboard</Title>
          <Line />
-         <DataChart />
+         <DataTable />
       </div>
    )
 }
