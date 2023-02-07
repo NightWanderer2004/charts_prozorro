@@ -1,7 +1,7 @@
 import { useGetPlansItemQuery } from '../../../redux/api/apiSlice'
 import FieldPlaceholder from './FieldPlaceholder'
 
-const PlanItem = ({ id }) => {
+const Cell = ({ id }) => {
    const { data, isLoading, isError } = useGetPlansItemQuery(id)
 
    if (isLoading) {
@@ -27,4 +27,4 @@ const PlanItem = ({ id }) => {
    }
 }
 
-export default PlanItem
+export default Cell

@@ -1,6 +1,6 @@
 import s from '../../../styles/table.module.scss'
 import { useGetPlansQuery } from '../../../redux/api/apiSlice'
-import PlanItem from './PlanItem'
+import Cell from './Cell'
 
 const DataTable = () => {
    const { data, isLoading, isError } = useGetPlansQuery()
@@ -25,7 +25,7 @@ const DataTable = () => {
             </thead>
             <tbody>
                {data.data.slice(0, 15).map(el => (
-                  <PlanItem key={el.id} id={el.id} />
+                  <Cell key={el.id} id={el.id} />
                ))}
             </tbody>
          </table>
