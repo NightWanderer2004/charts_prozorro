@@ -10,9 +10,12 @@ export const apiSlice = createApi({
          query: () => '/plans',
       }),
       getPlansItem: builder.query({
-         query: id => ({ url: `plans/${id}` }),
+         query: id => `plans/${id}`,
+      }),
+      getPlansPage: builder.query({
+         query: page => `plans?${page}`,
       }),
    }),
 })
 
-export const { useGetPlansQuery, useGetPlansItemQuery } = apiSlice
+export const { useGetPlansQuery, useGetPlansItemQuery, useGetPlansPageQuery } = apiSlice
