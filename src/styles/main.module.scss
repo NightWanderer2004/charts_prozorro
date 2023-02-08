@@ -6,3 +6,6 @@
 .title {
    @apply font-bold text-4xl text-neutral-900;
 }
+.paginationBtn {
+   @apply bg-slate-400 text-sm font-bold uppercase text-white p-2 rounded-md mt-4 active:bg-slate-500;
+}

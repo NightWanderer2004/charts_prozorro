@@ -18,7 +18,7 @@ thead {
 }
 tbody {
    td {
-      @apply py-3 truncate max-w-[300px] text-center;
+      @apply py-3 max-w-[300px] truncate text-center;
       &:first-child {
          @apply text-left;
       }
