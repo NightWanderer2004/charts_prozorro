@@ -6,7 +6,7 @@ const Navbar = () => {
    return (
       <nav className={s.navbar}>
          <NavLink to='/dashboard'>
-            <h3 className={s.logo}>Softlist</h3>
+            <h3 className={s.logo}>MarketFlow</h3>
          </NavLink>
       </nav>
    )
