@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom'
 const PageBtn = ({ children, route }) => {
    return (
       <li className={s.link}>
-         <NavLink className={({ isActive }) => (isActive ? 'text-blue-600' : '')} to={route}>
+         <NavLink className={({ isActive }) => (isActive ? 'text-blue-600 fill-blue-600' : '')} to={route}>
             {children}
          </NavLink>
       </li>
