@@ -6,16 +6,30 @@ export const apiSlice = createApi({
       baseUrl: 'https://public.api.openprocurement.org/api/2.5/',
    }),
    endpoints: builder => ({
-      getPlans: builder.query({
-         query: () => '/plans',
+      getCategory: builder.query({
+         query: type => `${type === 'plans' ? 'plans' : 'tenders'}`,
       }),
-      getPlansItem: builder.query({
-         query: id => `plans/${id}`,
+      getItem: builder.query({
+         query: args => {
+            const { id, type } = args
+            if (type == 'plans') {
+               return { url: `plans/${id}` }
+            } else if (type == 'tenders') {
+               return { url: `tenders/${id}` }
+            }
+         },
       }),
-      getPlansPage: builder.query({
-         query: page => `plans?${page}`,
+      getPage: builder.query({
+         query: args => {
+            const { page, type } = args
+            if (type == 'plans') {
+               return { url: `plans?${page}` }
+            } else if (type == 'tenders') {
+               return { url: `tenders?${page}` }
+            }
+         },
       }),
    }),
 })
 
-export const { useGetPlansQuery, useGetPlansItemQuery, useGetPlansPageQuery } = apiSlice
+export const { useGetCategoryQuery, useGetItemQuery, useGetPageQuery } = apiSlice

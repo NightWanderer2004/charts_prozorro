@@ -3,8 +3,13 @@ import Cell from './Cell'
 import ErrorText from '../ErrorText'
 import PaginationBtn from '../PaginationBtn'
 
-const DataTable = ({ data, isLoading, isError, setPage }) => {
-   const header = ['Descirption', 'Amount', 'Currency', 'Status', 'Owner']
+const DataTable = ({ type, data, isLoading, isError, setPage }) => {
+   let header
+   if (type == 'plans') {
+      header = ['Descirption', 'Amount', 'Currency', 'Status', 'Owner']
+   } else if (type == 'tenders') {
+      header = ['Title', 'Step', 'Currency', 'Procurement', 'Owner']
+   }
    let content
 
    const handleChangePage = path => {
@@ -20,7 +25,7 @@ const DataTable = ({ data, isLoading, isError, setPage }) => {
    } else if (data.data.length === 0) {
       content = <ErrorText>Data is empty</ErrorText>
    } else {
-      content = data.data.slice(0, 15).map((el, i) => <Cell key={el.id} id={el.id} index={++i} />)
+      content = data.data.slice(0, 15).map(el => <Cell key={el.id} type={type} id={el.id} />)
    }
 
    return (
@@ -34,12 +39,7 @@ const DataTable = ({ data, isLoading, isError, setPage }) => {
                      ))}
                   </tr>
                </thead>
-               <tbody>
-                  {content}
-                  {/* {data.data.slice(0, 15).map((el, i) => (
-                     <Cell key={el.id} id={el.id} index={++i} />
-                  ))} */}
-               </tbody>
+               <tbody>{content}</tbody>
             </table>
          </div>
          <div className='flex gap-x-2'>
