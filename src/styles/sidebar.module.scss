@@ -4,6 +4,9 @@
 .links {
    @apply flex flex-col gap-y-3;
    .link {
-      @apply text-xl text-neutral-900;
+      @apply text-2xl text-neutral-900;
+      a {
+         @apply flex items-center gap-x-2;
+      }
    }
 }
