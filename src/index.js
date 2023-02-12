@@ -3,11 +3,13 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import ErrorPage from './routes/ErrorPage.jsx'
-import Dashboard from './routes/Dashboard'
+import Plans from './routes/Plans'
 import Tenders from './routes/Tenders'
 import App from './App'
 import { Provider } from 'react-redux'
 import { store } from './redux/store'
+import ItemPage from './routes/ItemPage'
+import WelcomePage from './routes/WelcomePage'
 
 const router = createBrowserRouter([
    {
@@ -16,12 +18,20 @@ const router = createBrowserRouter([
       errorElement: <ErrorPage />,
       children: [
          {
-            path: '/dashboard',
-            element: <Dashboard />,
+            path: '/',
+            element: <WelcomePage />,
          },
          {
-            path: '/orders',
+            path: '/plans',
+            element: <Plans />,
+         },
+         {
+            path: '/tenders',
             element: <Tenders />,
+         },
+         {
+            path: '/:type/:itemId',
+            element: <ItemPage />,
          },
       ],
    },
