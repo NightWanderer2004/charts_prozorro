@@ -3,9 +3,15 @@
       @apply px-3 py-5;
    }
 }
+.content {
+   @apply ml-[230px] mt-[51px] px-5;
+}
 .title {
    @apply font-bold text-4xl text-neutral-900;
 }
-.paginationBtn {
-   @apply bg-slate-400 text-sm font-bold uppercase text-white p-2 rounded-md mt-4 active:bg-slate-500;
+.line {
+   @apply w-full h-[1px] my-4 bg-neutral-200;
+}
+.button {
+   @apply bg-blue-400 text-sm font-bold uppercase text-white p-2 rounded-md mt-4 active:bg-blue-500;
 }

@@ -1,5 +1,7 @@
+import s from '../../styles/main.module.scss'
+
 const Content = ({ children }) => {
-   return <div className='ml-[230px] mt-[51px] px-5'>{children}</div>
+   return <div className={s.content}>{children}</div>
 }
 
 export default Content

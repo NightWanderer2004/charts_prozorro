@@ -1,5 +1,7 @@
+import s from '../../styles/main.module.scss'
+
 const Line = () => {
-   return <div className='w-full h-[1px] my-4 bg-neutral-200'></div>
+   return <div className={s.line}></div>
 }
 
 export default Line

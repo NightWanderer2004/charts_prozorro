@@ -1,0 +1,12 @@
+.welcome {
+   @apply text-center mt-20 font-semibold;
+}
+.title {
+   @apply text-5xl;
+}
+.text {
+   @apply text-xl font-medium mt-5;
+   span {
+      @apply text-blue-600;
+   }
+}

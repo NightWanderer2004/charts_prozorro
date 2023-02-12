@@ -1,13 +1,16 @@
 .container {
    @apply max-h-[565px] overflow-scroll shadow-md;
 }
+.tablePlaceholder {
+   @apply animate-pulse rounded-sm w-full h-[565px] bg-neutral-300;
+}
 table {
    @apply relative w-full;
 }
 thead {
-   @apply sticky top-0 left-0;
+   @apply sticky top-0 left-0 shadow-sm;
    th {
-      @apply text-white bg-slate-600 font-bold py-3 text-center;
+      @apply text-white bg-neutral-600 font-bold py-3 text-center;
       &:first-child {
          @apply text-left rounded-tl-sm;
       }
@@ -30,4 +33,10 @@ tbody {
 td,
 th {
    @apply px-5;
+}
+.paginationBtn {
+   @apply bg-blue-400 text-sm font-bold uppercase text-white p-2 rounded-md mt-4 active:bg-blue-500;
+}
+.itemLink {
+   @apply underline underline-offset-2 text-blue-400 active:text-blue-500;
 }
