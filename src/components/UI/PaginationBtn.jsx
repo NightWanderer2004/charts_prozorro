@@ -1,11 +1,7 @@
-import s from '../../styles/main.module.scss'
+import Button from './Button'
 
 const PaginationBtn = ({ children, changePage }) => {
-   return (
-      <button className={s.paginationBtn} onClick={changePage}>
-         {children}
-      </button>
-   )
+   return <Button onClick={changePage}>{children}</Button>
 }
 
 export default PaginationBtn
