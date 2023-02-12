@@ -6,13 +6,14 @@ import { useGetPageQuery } from '../redux/api/apiSlice'
 
 const Tenders = () => {
    const [page, setPage] = useState('')
-   const { data, isLoading, isError } = useGetPageQuery({ page, type: 'tenders' })
+   const [limit, setLimit] = useState(15)
+   const { data, isLoading, isError, isFetching } = useGetPageQuery({ page, type: 'tenders', limit: `?limit=${limit}` })
 
    return (
       <div>
-         <Title>Tenders</Title>
+         <Title>Тендери</Title>
          <Line />
-         <DataTable type='tenders' data={data} isLoading={isLoading} isError={isError} setPage={setPage} />
+         <DataTable type='tenders' data={data} isLoading={isLoading} isError={isError} isFetching={isFetching} setPage={setPage} />
       </div>
    )
 }

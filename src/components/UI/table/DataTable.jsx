@@ -2,31 +2,18 @@ import s from '../../../styles/table.module.scss'
 import Cell from './Cell'
 import ErrorText from '../ErrorText'
 import PaginationBtn from '../PaginationBtn'
+import TablePlaceholder from './TablePlaceholder'
 
-const DataTable = ({ type, data, isLoading, isError, setPage }) => {
+const DataTable = ({ type, data, isLoading, isError, isFetching, setPage }) => {
    let header
-   if (type == 'plans') {
-      header = ['Descirption', 'Amount', 'Currency', 'Status', 'Owner']
-   } else if (type == 'tenders') {
-      header = ['Title', 'Step', 'Currency', 'Procurement', 'Owner']
-   }
+   if (type === 'plans') header = ['Опис', 'Сума', 'Валюта', 'Статус', 'Власник', 'Деталi']
+   else if (type === 'tenders') header = ['Назва', 'Крок', 'Валюта', 'Закупівлі', 'Власник', 'Деталi']
+
    let content
-
-   const handleChangePage = path => {
-      const index = path.indexOf('?')
-      path = path.substring(index + 1)
-      setPage(path)
-   }
-
-   if (isLoading) {
-      return <div className='animate-pulse rounded-md w-full h-[565px] bg-neutral-300'></div>
-   } else if (isError) {
-      return <ErrorText>Something went wrong</ErrorText>
-   } else if (data.data.length === 0) {
-      content = <ErrorText>Data is empty</ErrorText>
-   } else {
-      content = data.data.slice(0, 15).map(el => <Cell key={el.id} type={type} id={el.id} />)
-   }
+   if (isLoading || isFetching) return <TablePlaceholder />
+   else if (isError) return <ErrorText>Щось пішло не так :(</ErrorText>
+   else if (data.data.length === 0) content = <ErrorText>Немає даних</ErrorText>
+   else content = data.data.map((el, i) => <Cell key={i} type={type} id={el.id} />)
 
    return (
       <div>
@@ -43,8 +30,8 @@ const DataTable = ({ type, data, isLoading, isError, setPage }) => {
             </table>
          </div>
          <div className='flex gap-x-2'>
-            {data.prev_page && <PaginationBtn changePage={() => handleChangePage(data.prev_page.path)}>Back</PaginationBtn>}
-            {data.next_page && <PaginationBtn changePage={() => handleChangePage(data.next_page.path)}>Next</PaginationBtn>}
+            {data.prev_page && <PaginationBtn changePage={() => setPage(`&offset=${data.prev_page.offset}`)}>Назад</PaginationBtn>}
+            {data.next_page && <PaginationBtn changePage={() => setPage(`&offset=${data.next_page.offset}`)}>Далi</PaginationBtn>}
          </div>
       </div>
    )
