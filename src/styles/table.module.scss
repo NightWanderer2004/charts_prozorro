@@ -5,7 +5,7 @@
    @apply animate-pulse rounded-sm w-full h-[565px] bg-neutral-300;
 }
 table {
-   @apply relative w-full;
+   @apply relative w-full h-[565px];
 }
 thead {
    @apply sticky top-0 left-0 shadow-sm;
