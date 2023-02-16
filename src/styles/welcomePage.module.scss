@@ -9,4 +9,7 @@
    span {
       @apply text-blue-600;
    }
+   &:last-child {
+      @apply text-base;
+   }
 }
