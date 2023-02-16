@@ -5,7 +5,7 @@
    @apply animate-pulse rounded-sm w-full h-[565px] bg-neutral-300;
 }
 table {
-   @apply relative w-full h-[565px];
+   @apply relative h-[565px] w-full;
 }
 thead {
    @apply sticky top-0 left-0 h-[51px] shadow-sm;
@@ -32,7 +32,7 @@ tbody {
 }
 td,
 th {
-   @apply px-5 h-[51px];
+   @apply h-[51px] px-5;
 }
 .paginationBtn {
    @apply bg-blue-400 text-sm font-bold uppercase text-white p-2 rounded-md mt-4 active:bg-blue-500;
