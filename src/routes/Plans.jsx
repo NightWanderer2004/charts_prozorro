@@ -6,7 +6,7 @@ import { useGetPageQuery } from '../redux/api/apiSlice'
 
 const Plans = () => {
    const [page, setPage] = useState('')
-   const [limit, setLimit] = useState(15)
+   const limit = 15
    const { data, isLoading, isError, isFetching } = useGetPageQuery({ page, type: 'plans', limit: `?limit=${limit}` })
 
    return (

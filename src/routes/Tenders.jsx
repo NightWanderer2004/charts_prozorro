@@ -6,7 +6,7 @@ import { useGetPageQuery } from '../redux/api/apiSlice'
 
 const Tenders = () => {
    const [page, setPage] = useState('')
-   const [limit, setLimit] = useState(15)
+   const limit = 15
    const { data, isLoading, isError, isFetching } = useGetPageQuery({ page, type: 'tenders', limit: `?limit=${limit}` })
 
    return (
